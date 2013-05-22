@@ -1,13 +1,19 @@
 package com.skimmy.jgis;
 
+import com.skimmy.jgis.data.GeoPoint;
+import com.skimmy.jgis.data.GeoPointWithAccuracy;
+
 public class Main {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		GeoPoint liberty = new GeoPoint(40.6893, -74.0445);
+		GeoPointWithAccuracy bigben = new GeoPointWithAccuracy(51.50072, -0.12456, 5.0);
+		System.out.println("Liberty Statue  " + liberty.toString());
+		System.out.println("Big Ben         " + bigben.toString());
+		System.out.println("distance        " + liberty.distanceFrom(bigben));
 	}
 
 }
