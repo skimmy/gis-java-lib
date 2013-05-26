@@ -2,6 +2,7 @@ package com.skimmy.jgis;
 
 import com.skimmy.jgis.data.GeoPoint;
 import com.skimmy.jgis.data.GeoPointWithAccuracy;
+import com.skimmy.jgis.metrics.GeoDistance;
 
 public class Main {
 
@@ -14,6 +15,8 @@ public class Main {
 		System.out.println("Liberty Statue  " + liberty.toString());
 		System.out.println("Big Ben         " + bigben.toString());
 		System.out.println("distance        " + liberty.distanceFrom(bigben));
+		System.out.println("Bearing         " + liberty.bearingTo(bigben));
+		System.out.println(GeoDistance.getBearingDeg(50.5, 0, 51.5020, 0.0030));
 	}
 
 }

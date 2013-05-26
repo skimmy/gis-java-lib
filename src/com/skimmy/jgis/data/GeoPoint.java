@@ -39,7 +39,12 @@ public class GeoPoint {
 		return GeoDistance.haversineDistance(this.lat, this.lon, other.lat,
 				other.lon);
 	}
-	
+
+	public double bearingTo(GeoPoint other) {
+		return GeoDistance.getBearingDeg(other.lat, other.lon, this.lat,
+				this.lon);
+	}
+
 	@Override
 	public String toString() {
 		return "(" + this.lat + ", " + this.lon + ")";
