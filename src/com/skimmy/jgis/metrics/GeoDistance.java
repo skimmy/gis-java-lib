@@ -14,7 +14,8 @@ public class GeoDistance {
 		double c = 2 * Math.asin(Math.sqrt(a));
 		return Constants.EARTH_MEAN_RADIUS_METER * c;
 	}
-	
+
+	// TODO: Rewrite: WRONG!!!
 	public static double getBearingDeg(double lat1, double lon1, double lat2, double lon2) {
 		double dLon = Math.toRadians(lon2 - lon1);
 		double y = Math.sin(dLon) * Math.cos(lat2);

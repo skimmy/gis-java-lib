@@ -7,10 +7,13 @@ import com.skimmy.jgis.data.GeoPointWithAccuracy;
 public class NavigationPoint extends GeoPointWithAccuracy {
 
 	private Date timestamp;
+	
+	public NavigationPoint(double lat, double lon) {
+		super(lat, lon, 0.0);
+	}
 
 	public NavigationPoint(double lat, double lon, double acc) {
 		super(lat, lon, acc);
-		// TODO Auto-generated constructor stub
 	}
 
 	public Date getTimestamp() {
