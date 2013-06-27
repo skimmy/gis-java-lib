@@ -16,6 +16,11 @@ public class GeoPointWithAccuracy extends GeoPoint {
 		this.accuracy = accuracy;
 	}
 	
+	public double distanceWithAccuracyFrom(GeoPointWithAccuracy other) {
+		double d = Math.abs(super.distanceFrom(other));
+		return Math.abs(d - (this.accuracy / 2.0 ) - (other.accuracy / 2.0));
+	}
+	
 	@Override
 	public String toString() {
 		return super.toString() + " +/- " + this.accuracy;

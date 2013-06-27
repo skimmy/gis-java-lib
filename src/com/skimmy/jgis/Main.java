@@ -1,5 +1,6 @@
 package com.skimmy.jgis;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -7,6 +8,7 @@ import com.skimmy.jgis.data.GeoPoint;
 import com.skimmy.jgis.data.GeoPointWithAccuracy;
 import com.skimmy.jgis.data.nav.NavigationPoint;
 import com.skimmy.jgis.data.nav.Route;
+import com.skimmy.jgis.utility.LogFileParser;
 
 public class Main {
 
@@ -51,6 +53,15 @@ public class Main {
 		System.out.println("Time:     " + route.getRouteTimeSeconds());
 		System.out.println("Avg speed " + route.getAverageSpeed()*3.6 + " Km/h");
 	}
+	
+	private static void testNagivationSession() {
+		try {
+			LogFileParser.parseLogFile("/Users/micheleschimd/Desktop/PD_VE_20130612.txt");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	/**
 	 * @param args
@@ -58,6 +69,7 @@ public class Main {
 	public static void main(String[] args) {
 		testGeoPoints();
 		testRoute();
+		testNagivationSession();
 	}
 
 }

@@ -42,6 +42,12 @@ public class NavigationPoint extends GeoPointWithAccuracy {
 		return 0;
 	}
 	
+	public double speedWithAccuracyFrom(NavigationPoint other) {
+		double distance = this.distanceWithAccuracyFrom(other);
+		double time = 0.001 * (double)(this.timeFrom(other));
+		return (time != 0 ? distance / time : 0);
+	}
+	
 	public String toKmlPlacemarkString() {
 		String output = "<Placemark>";
 		output += "<Point><coordinates>";
