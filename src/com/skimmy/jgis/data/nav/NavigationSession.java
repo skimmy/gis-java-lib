@@ -71,9 +71,9 @@ public class NavigationSession extends LinkedBlockingQueue<NavigationPoint>
 				this.firstPoint = point;
 			}
 			if (this.lastPoint != null) {
-				double d = (double) point.distanceFrom(lastPoint);
-				double t = (double) point.timeFrom(lastPoint) / 1000.0;
-				double v = d / t;
+//				double d = (double) point.distanceFrom(lastPoint);
+//				double t = (double) point.timeFrom(lastPoint) / 1000.0;
+//				double v = d / t;
 				this.totalDistance += point.distanceFrom(lastPoint);
 			}
 			this.lastPoint = point;

@@ -2,7 +2,6 @@ package com.skimmy.jgis.utility;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -48,7 +47,7 @@ public class LogFileParser {
 			navPoint.setTimestamp(d);
 			points.add(navPoint);
 			navSession.offer(navPoint);
-			
+			scanner.close();
 		}
 		bReader.close();
 		try {
